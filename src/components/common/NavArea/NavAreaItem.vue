@@ -23,7 +23,14 @@
       itemList: {
         type : Object,
         default(){
-          return {}
+          return {
+            title: "",
+            linkType : 0,
+            link : "",
+            bg : "",
+            msg : [""],
+            disabled : true,
+          }
         }
       }
     }
@@ -31,10 +38,6 @@
 </script>
 
 <style lang="less" scoped>
-  *{
-    transition: .5s;
-  }
-
   .NavArea-item {
     position: relative;
     height: 220px;
@@ -45,6 +48,10 @@
     font-family: "Arial","微软雅黑",serif;
     overflow: hidden;
     text-align: center;
+    z-index: 1;
+    *{
+      transition: .5s;
+    }
     .item-bg{
       width: auto;
       height: 120%;
@@ -61,6 +68,7 @@
       position: absolute;
       top: 80%;
       background-color: rgba(0,0,0,.4);
+      transition: .5s;
       .item-title{
         line-height: 47px;
         font-size: 18px;
@@ -103,5 +111,4 @@
       }
     }
   }
-
 </style>

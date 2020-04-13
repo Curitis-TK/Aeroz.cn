@@ -20,5 +20,9 @@
   .Home-title{
     text-align: center;
     margin-bottom: 50px;
+    font-size: 64px;
+    color: #fff;
+    font-weight: normal;
+    font-family: "Arial","微软雅黑",sans-serif;
   }
 </style>

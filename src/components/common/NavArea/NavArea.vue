@@ -1,8 +1,10 @@
 <template>
   <div class="NavArea container">
-    <el-row :gutter="20">
-      <nav-area-item v-for="(item ,index ) in NavList" :key="index" :itemList="item"/>
-    </el-row>
+    <transition name="el-zoom-in-center">
+      <el-row :gutter="20" v-show="show">
+          <nav-area-item v-for="(item ,index ) in NavList" :key="index" :itemList="item"/>
+      </el-row>
+    </transition>
   </div>
 </template>
 
@@ -49,8 +51,14 @@
             msg : ["测试文字"],
             disabled : false,
           },
-        }
+        },
+        show : false,
       }
+    },
+    created() {
+      setTimeout(()=>{
+        this.show = true
+      },100)
     }
   }
 </script>
