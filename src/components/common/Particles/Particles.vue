@@ -28,7 +28,6 @@
     bottom: 0;
   }
   #particles{
-    transform: translateZ(0);
     position: fixed;
     width: 100%;
     height: 100%;

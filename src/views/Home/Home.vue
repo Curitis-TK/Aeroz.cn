@@ -1,6 +1,12 @@
 <template>
   <div class="Home">
-    <h1 class="Home-title">AeroZ · 导航中心</h1>
+    <transition
+      appear
+      enter-active-class="animated flipInX"
+      leave-active-class="animated flipOutX"
+    >
+      <h1 class="Home-title" v-if="show">AeroZ · 导航中心</h1>
+    </transition>
     <nav-area></nav-area>
   </div>
 </template>
@@ -13,6 +19,14 @@
     components: {
       NavArea,
     },
+    data(){
+      return {
+        show : true
+      }
+    },
+    created() {
+
+    }
   }
 </script>
 
@@ -20,7 +34,7 @@
   .Home-title{
     text-align: center;
     margin-bottom: 50px;
-    font-size: 64px;
+    font-size: 50px;
     color: #fff;
     font-weight: normal;
     font-family: "Arial","微软雅黑",sans-serif;

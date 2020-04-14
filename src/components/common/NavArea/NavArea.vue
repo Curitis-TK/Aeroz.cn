@@ -1,5 +1,5 @@
 <template>
-  <div class="NavArea container">
+  <div class="NavArea container animated zoomIn">
     <el-row :gutter="20" v-show="show">
         <nav-area-item v-for="(item ,index ) in NavList" :key="index" :itemList="item"/>
     </el-row>

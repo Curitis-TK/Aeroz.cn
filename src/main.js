@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import ElementUI from 'element-ui'
+import animated from 'animate.css'
 import 'normalize.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/container.less'
@@ -10,6 +11,7 @@ import './assets/css/container.less'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.use(animated)
 
 new Vue({
   router,

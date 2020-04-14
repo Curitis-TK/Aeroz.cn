@@ -1,7 +1,13 @@
 <template>
   <div id="app">
     <el-main class="main">
-      <router-view/>
+      <transition
+        mode="out-in"
+        enter-active-class="animated zoomIn"
+        leave-active-class="animated zoomOut"
+      >
+        <router-view/>
+      </transition>
     </el-main>
     <fixed-bottom/>
     <Particles class="Particles"/>
@@ -23,12 +29,17 @@
 </script>
 
 <style scoped>
+  .animated {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+  }
   #app{
     min-height: 100vh;
     position: relative;
   }
   .main{
     padding-bottom: 100px;
+    overflow: hidden;
   }
   @media (max-width: 992px){
     .main{
