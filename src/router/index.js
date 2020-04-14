@@ -9,7 +9,7 @@ Vue.use(VueRouter)
     /*404组件*/
   {
     path: '*',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About/About.vue')
+    component: () => import('components/common/NotFound/NotFound')
   },
     /*空路径重定向*/
   {
