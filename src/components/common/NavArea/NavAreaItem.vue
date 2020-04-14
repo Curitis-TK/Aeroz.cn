@@ -1,12 +1,12 @@
 <template>
   <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6" class="NavArea-col">
-    <div class="NavArea-item">
-      <img class="item-bg" :src="itemList.bg" :alt="itemList.title">
+    <div class="NavArea-item" @click="itemClick">
+      <img class="item-bg" :src="itemData.bg" :alt="itemData.title">
       <div class="item-content">
-        <p class="item-title">{{itemList.title}}</p>
+        <p class="item-title">{{itemData.title}}</p>
         <div class="item-info">
           <ul>
-            <li v-for="(item ,index) in itemList.msg" :key="index">
+            <li v-for="(item ,index) in itemData.msg" :key="index">
               <p>{{item}}</p>
             </li>
           </ul>
@@ -33,7 +33,32 @@
           }
         }
       }
-    }
+    },
+    data(){
+      return {
+        itemData : {},
+      }
+    },
+    mounted() {
+      this.itemData = this.itemList
+    },
+    methods: {
+      itemClick(){
+        console.log(this.itemData.linkType);
+        switch (this.itemData.linkType) {
+          case 0:
+            window.location.href = this.itemData.link
+            break
+          case 1:
+            if (this.$route.name !== this.link) {
+              this.$router.replace(this.itemData.link)
+            } else {
+              console.log('%c 原地踏步 ','background:#52c41a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff');
+            }
+            break
+        }
+      }
+    },
   }
 </script>
 
@@ -49,11 +74,11 @@
     overflow: hidden;
     text-align: center;
     z-index: 1;
-    *{
-      transition: .5s;
-    }
+    box-shadow: 0 0 5px #3c3c3c;
+    transition: .5s;
     .item-bg{
       width: auto;
+      transition: .5s;
       height: 120%;
       margin: 0 -100%;
       transform-origin: 50% 50%;
@@ -63,16 +88,17 @@
       }
     }
     .item-content{
+      transition: .5s;
       width: 100%;
       height: 100%;
       position: absolute;
       top: 80%;
       background-color: rgba(0,0,0,.4);
-      transition: .5s;
       .item-title{
         line-height: 47px;
         font-size: 18px;
         margin: 0;
+        transition: .5s;
       }
       .item-info{
         height: 40%;
@@ -97,7 +123,10 @@
 
     /*HOVER*/
     &:hover{
+      transition: .5s;
       cursor: pointer;
+      box-shadow: 0 0 5px deepskyblue;
+      transform: scale(1.05);
       .item-bg{
         transform: rotate(-10deg) scale(1.5);
       }

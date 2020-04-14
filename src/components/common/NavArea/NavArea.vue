@@ -1,10 +1,8 @@
 <template>
   <div class="NavArea container">
-    <transition name="el-zoom-in-center">
-      <el-row :gutter="20" v-show="show">
-          <nav-area-item v-for="(item ,index ) in NavList" :key="index" :itemList="item"/>
-      </el-row>
-    </transition>
+    <el-row :gutter="20" v-show="show">
+        <nav-area-item v-for="(item ,index ) in NavList" :key="index" :itemList="item"/>
+    </el-row>
   </div>
 </template>
 
