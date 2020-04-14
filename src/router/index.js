@@ -9,7 +9,7 @@ Vue.use(VueRouter)
     /*404组件*/
   {
     path: '*',
-    component: Home
+    component: () => import(/* webpackChunkName: "about" */ '../views/About/About.vue')
   },
     /*空路径重定向*/
   {
@@ -19,15 +19,13 @@ Vue.use(VueRouter)
     /*路由路径*/
   {
     path: '/home',
-    name: 'Home',
+    name: '/home',
     component: Home
   },
   {
     path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.懒加载
+    name: '/about',
+    //懒加载
     component: () => import(/* webpackChunkName: "about" */ '../views/About/About.vue')
   }
 ]

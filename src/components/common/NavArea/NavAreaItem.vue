@@ -51,9 +51,9 @@
             break
           case 1:
             if (this.$route.name !== this.link) {
-              this.$router.replace(this.itemData.link)
+              this.$router.push(this.itemData.link)
             } else {
-              console.log('%c 原地踏步 ','background:#52c41a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff');
+              console.log('%c 原地踏步 ','background:#52c41a ; padding: 1px; border-radius: 3px;  color: #fff');
             }
             break
         }
