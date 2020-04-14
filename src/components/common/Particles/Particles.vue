@@ -1,6 +1,6 @@
 <template>
-  <div id="particles"></div>
 
+  <div id="particles"></div>
 </template>
 
 <script>
@@ -17,6 +17,16 @@
 </script>
 
 <style scoped>
+  /*挡住canvas，用默认右键菜单*/
+  #particles:after{
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
   #particles{
     position: absolute;
     width: 100%;

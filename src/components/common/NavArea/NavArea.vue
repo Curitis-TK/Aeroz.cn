@@ -43,8 +43,8 @@
           },
           test2:{
             title: "空内容",
-            linkType : 0,
-            link : "https://image.aeroz.cn/",
+            linkType : 1,
+            link : "/empty",
             bg : "https://image.aeroz.cn/images/2020/01/14/image.jpg",
             msg : ["测试文字"],
             disabled : false,

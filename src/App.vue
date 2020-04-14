@@ -20,6 +20,9 @@
 </script>
 
 <style scoped>
+  #app{
+    min-height: 100vh;
+  }
   .Particles{
     position: fixed;
     top: 0;

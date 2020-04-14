@@ -6,10 +6,17 @@ import Home from '../views/Home/Home.vue'
 Vue.use(VueRouter)
 
   const routes = [
+    /*404组件*/
+  {
+    path: '*',
+    component: Home
+  },
+    /*空路径重定向*/
   {
     path: '/',
     redirect : '/home'
   },
+    /*路由路径*/
   {
     path: '/home',
     name: 'Home',
