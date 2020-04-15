@@ -1,6 +1,6 @@
 <template>
   <el-col :span="6" :xs="24" :sm="12" :md="8" :lg="6" class="NavArea-col">
-    <div class="NavArea-item" @click="itemClick">
+    <div class="NavArea-item" :class="{itemDisabled : itemData.disabled}" @click="itemClick">
       <img class="item-bg" :src="itemData.bg" :alt="itemData.title">
       <div class="item-content">
         <p class="item-title">{{itemData.title}}</p>
@@ -44,19 +44,23 @@
     },
     methods: {
       itemClick(){
-        console.log(this.itemData.linkType);
-        switch (this.itemData.linkType) {
-          case 0:
-            window.location.href = this.itemData.link
-            break
-          case 1:
-            if (this.$route.name !== this.link) {
-              this.$router.push(this.itemData.link)
-            } else {
-              console.log('%c 原地踏步 ','background:#52c41a ; padding: 1px; border-radius: 3px;  color: #fff');
-            }
-            break
+        if(this.itemData.disabled === false){
+          switch (this.itemData.linkType) {
+            case 0:
+              window.location.href = this.itemData.link
+              break
+            case 1:
+              if (this.$route.name !== this.link) {
+                this.$router.push(this.itemData.link)
+              } else {
+                console.log('%c 原地踏步 ','background:#52c41a ; padding: 1px; border-radius: 3px;  color: #fff');
+              }
+              break
+          }
+        }else{
+          console.log("disabled");
         }
+
       }
     },
   }
@@ -137,6 +141,17 @@
           margin: 40px auto 15px;
           font-size: 28px;
         }
+      }
+    }
+  }
+  .itemDisabled{
+    *{
+      cursor: not-allowed;
+    }
+    .item-content{
+      background-color: rgba(255,0,0,0.4);
+      &:hover{
+        background-color: rgba(255,0,0,0.7);
       }
     }
   }
