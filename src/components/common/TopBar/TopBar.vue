@@ -21,8 +21,8 @@
 
 <style scoped>
   .TopBar{
-    background-color: rgba(0,0,100,0.3);
-    font-size: 32px;
+    background-color: rgba(0,0,0,0.3);
+    font-size: 24px;
   }
   .container{
     display: flex;
@@ -33,6 +33,7 @@
   }
   .left,.right{
     width: 60px;
+    padding: 0 10px;
   }
   .center{
     flex: 1;

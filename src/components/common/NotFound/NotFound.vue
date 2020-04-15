@@ -1,5 +1,8 @@
 <template>
     <div class="NotFound">
+      <top-bar class="animated fadeInDown delay">
+        <div slot="center">AeroZ - 404</div>
+      </top-bar>
       <div class="content">
         <h2>(⊙o⊙)?</h2>
         <p>迷路了？</p>
@@ -26,13 +29,18 @@
 </script>
 
 <style lang="less" scoped>
+  .delay{
+    -webkit-animation-delay: 150ms;//延迟执行动画
+    animation-delay: 150ms;
+
+  }
   .NotFound{
     user-select: none;
     text-align: center;
     font-family: "Arial","微软雅黑",sans-serif;
     color: #fff;
     .content{
-      margin-top: 5vh;
+      padding-top: 5vh;
     }
     h2{
       font-size: 10vh;
