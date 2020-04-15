@@ -68,6 +68,8 @@
 
 <style lang="less" scoped>
   .NavArea-item {
+    user-select: none;
+
     position: relative;
     height: 220px;
     margin-top: 10px;

@@ -38,19 +38,15 @@
     position: relative;
   }
   .main{
-    padding-bottom: 100px;
+    padding:0 0 100px;
     overflow: hidden;
   }
   @media (max-width: 992px){
     .main{
-      padding-bottom: 150px;
+      padding-bottom: 130px;
     }
   }
-  @media (max-width: 768px){
-    .main{
-      padding-bottom: 250px;
-    }
-  }
+
 
   .Particles{
     position: fixed;
