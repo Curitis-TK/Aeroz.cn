@@ -148,6 +148,10 @@
     *{
       cursor: not-allowed;
     }
+    .item-bg{
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
     .item-content{
       background-color: rgba(255,0,0,0.4);
       &:hover{

@@ -42,7 +42,7 @@
             disabled : false,
           },
           aero:{
-            title: "AeroCraft",
+            title: "Minecraft 多人游戏",
             linkType : 1,
             link : "/aero",
             bg : "https://image.aeroz.cn/images/2020/01/14/aeroc.jpg",
